@@ -4,7 +4,7 @@ const server=express.Router()
 
 server.route('/').get(async(req, res)=>{
      await dB.select().table('data_message').then(response=>res.status(200).json(response))
-                                                           .catch(err=>res.status(400).json(err))
+                                                           .catch(err=>res.status(400).send(err))
 }).post(async(req,res)=>{
     const data={ msg:req.body.msg}
 
@@ -13,3 +13,5 @@ server.route('/').get(async(req, res)=>{
 })
 
 module.exports=server 
+
+//res.status(200).json(response)

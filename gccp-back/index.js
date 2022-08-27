@@ -4,9 +4,16 @@ const cors=require('cors')
 const express=require('express')
 const application=express()
 
+
+application.use((req, res, next)=>{
+    res.header("Access-Control-Allow-Origin", "http://localhost:5500")
+    res.header("Access-Control-Allow-Methods",['GET','POST'])
+    res.header("Access-Control-Allow-Headers", "Origin, Content-Type, Accept")
+    application.use(cors())
+    next()
+})
 application.use(express.urlencoded({ extended:true }))
 application.use(express.json())
 application.use('/',server)
-application.use(cors({origin:'*'}))
 
 application.listen(port)

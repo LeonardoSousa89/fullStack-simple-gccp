@@ -19,6 +19,9 @@ body {
     text-align: center;
 }
 
+#container{
+    overflow-y: scroll;
+}
 
 #msg {
     padding: 1em;
@@ -27,11 +30,28 @@ body {
     outline: none;
 }
 
+button{
+    cursor: pointer;
+    height: 42px;
+    width: 10%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: red;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+button:hover{
+    color: whitesmoke;
+}
+
 table{
     border: solid 1px whitesmoke;
     margin-top: 5em;
     border-radius: 6px;
-    height: 80%;
     width: 98%;
 }
 
@@ -43,4 +63,9 @@ table thead{
 table tbody{
     background-color: rgba(0, 0, 0, 0.5);
     font-size: larger;
+}
+
+table tbody tr td ul{
+    border: 0.5px whitesmoke solid;
+    padding: 0.5em;
 }
