@@ -8,11 +8,11 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      // host:'',
-      database: 'mensagem',
-      user:     'postgres',
-      password: '1234'
-      // ssl:{ rejectUnauthorized:true }
+      host: process.env.INSTANCE_HOST, // e.g. '127.0.0.1'
+      port: process.env.DB_PORT, // e.g. '5432'
+      user: process.env.DB_USER, // e.g. 'my-user'
+      password: process.env.DB_PASS, // e.g. 'my-user-password'
+      database: process.env.DB_NAME, // e.g. 'my-database'
     },
     pool: {
       min: 2,

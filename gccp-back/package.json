@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start-proxy": "! pgrep cloud_sql_proxy > /dev/null && cloud_sql_proxy -dir=/cloudsql -instances=$INSTANCE_CONNECTION_NAME &",
     "start": "node index.js",
     "dev":"nodemon index.js",
     "appinit":"gcloud init",
